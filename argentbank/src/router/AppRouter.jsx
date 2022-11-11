@@ -10,6 +10,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import HomePage from '../pages/HomePage';
 import SignInPage from '../pages/SignInPage';
+import UserPage from '../pages/UserPage';
 import ErrorPage from '../pages/ErrorPage';
 
 // CSS Import
@@ -34,7 +35,7 @@ function AppRouter() {
             </React.Fragment>}/>
 
           {/* Sign In Route */}
-          <Route path="/sign-in" element={
+          <Route path="/signin" element={
             <React.Fragment>
               <Header />
               <SignInPage />
@@ -45,6 +46,7 @@ function AppRouter() {
           <Route path="/user" element={
             <React.Fragment>
               <Header />
+              <UserPage />
               <Footer/> 
             </React.Fragment>}/>
 

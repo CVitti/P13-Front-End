@@ -29,8 +29,9 @@ function Header(){
                 <h1 className="sr-only">Argent Bank</h1>
             </NavLink>
             <div>
-                <NavLink to="/sign-in" className="main-nav-item">
-                    <FontAwesomeIcon icon={faUserCircle} /> Sign In
+                <NavLink to="/signin" className="main-nav-item">
+                    <FontAwesomeIcon icon={faUserCircle} /> 
+                    Sign In
                 </NavLink>
             </div>
         </nav>

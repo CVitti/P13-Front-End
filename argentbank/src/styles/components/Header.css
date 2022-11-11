@@ -1,3 +1,4 @@
+/* Header of the app, containing the logo and navigation menu */
 .main-nav {
     display: flex;
     justify-content: space-between;
@@ -17,6 +18,17 @@
 .main-nav-item {
     text-decoration: none;
     margin-right: 0.5rem;
+    font-size: 14px;
+}
+
+@media (min-width: 920px) {
+    .main-nav-item {
+        font-size: 15px;
+    }
+}
+
+.main-nav-item svg{
+    margin-right: 5px;
 }
   
 .main-nav-item:hover {

@@ -6,6 +6,10 @@ import "../styles/pages/ErrorPage.css"
 // React/React-router components import
 import { NavLink } from 'react-router-dom';
 
+/**
+ * 
+ * @returns JSX Code for the Error Page
+ */
 function ErrorPage() {
     return(
         <main>
@@ -14,7 +18,6 @@ function ErrorPage() {
                 <p>
                     This page doesn't exist.
                 </p>        
-
                 <NavLink to="/" className="errorPageLink">
                     Go back to home page
                 </NavLink>        
