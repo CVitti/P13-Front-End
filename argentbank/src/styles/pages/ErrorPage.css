@@ -1,0 +1,23 @@
+.errorText{
+    font-size: 40px;
+    justify-content: center;
+    row-gap: 50px;
+}
+
+.errorText h2{
+    margin-bottom: 0;
+}
+
+.errorText h2 span, .errorPageLink{
+    color: #00bc77;
+}
+
+.errorText p{
+    margin: 0;
+}
+
+.errorPageLink{
+    text-decoration: underline;
+    font-size: 20px;
+    margin: 70px 0px;
+}
