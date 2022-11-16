@@ -29,6 +29,6 @@ function HomePage() {
                 <FeatureItem iconType="Security"/>
             </section>
         </main>
-        );
-    }
-    export default HomePage;
+    );
+}
+export default HomePage;

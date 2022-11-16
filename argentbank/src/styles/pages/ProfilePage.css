@@ -1,0 +1,58 @@
+.edit-button {
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    display: none;
+}
+
+.header {
+    color: #fff;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+/* Name edit form style */
+.form-edit{
+    display: none;
+    row-gap: 20px;
+    align-items: center;
+}
+
+.input-container, .btn-container{
+    column-gap: 20px;
+    align-items: center;
+}
+
+/* Form inputs styles */
+.form-edit .input-container input{
+    width: 150px;
+    color: #5c6164;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 3px;
+    outline: 2px solid #98a1a7;
+    outline-offset: -2px;
+}
+
+.form-edit .input-container input::placeholder{
+    color: #98a1a7;
+}
+
+.form-edit .input-container input:focus-within{
+    outline-color: #00bc77;
+}
+
+/* Form buttons style */
+.form-edit .btn-container button{
+    cursor: pointer;
+    width: 50px;
+    justify-content: center;
+    padding: 5px 50px;
+    color: #00bc77;
+    border: solid 2px #00bc77;
+    background-color: #FFFFFF;
+    font-weight: 700;
+    border-radius: 3px;
+}

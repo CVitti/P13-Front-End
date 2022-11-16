@@ -4,10 +4,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 5px 20px;
+    font-weight: 700;
 }
 
 .main-nav a {
-    font-weight: bold;
     color: #2c3e50;
 }
 
@@ -17,18 +17,30 @@
 
 .main-nav-item {
     text-decoration: none;
-    margin-right: 0.5rem;
     font-size: 14px;
+    column-gap: 0.5rem;
+    align-items: center;
+}
+
+.loggedInNav svg, .loggedOutNav svg{
+    font-size: 1rem;
+}
+
+.loggedInNav{
+    row-gap: 0.3rem;
+    column-gap: 2rem;
+    justify-content: flex-end;
+    width: fit-content;
 }
 
 @media (min-width: 920px) {
     .main-nav-item {
         font-size: 15px;
     }
-}
 
-.main-nav-item svg{
-    margin-right: 5px;
+    .loggedInNav svg, .loggedOutNav svg{
+        font-size: 2rem;
+    }
 }
   
 .main-nav-item:hover {
