@@ -4,8 +4,8 @@
 import "../styles/components/Footer.css"
 
 /**
- * 
- * @returns JSX code for the App Footer
+ * Footer of the Argent Bank app
+ * @returns JSX code for the footer
  */
 function Footer(){
     return(

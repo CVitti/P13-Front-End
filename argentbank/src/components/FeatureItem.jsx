@@ -20,8 +20,9 @@ FeatureItem.propTypes = {
 }
 
 /**
- * 
- * @param {object} iconType to manage for the component
+ * Component FeatureItem of the home page, displaying feature icon, title and text
+ * @param {object} props containing feature type
+ * @param {string} props.iconType Matching feature type to display the right icon
  * @returns JSX Code for the featureItem to display
  */
 function FeatureItem({iconType}) {

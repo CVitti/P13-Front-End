@@ -7,7 +7,7 @@ import "../styles/pages/HomePage.css"
 import FeatureItem from "../components/FeatureItem";
 
 /**
- * 
+ * Home page of the Argent Bank App
  * @returns JSX Code for the Home Page
  */
 function HomePage() {

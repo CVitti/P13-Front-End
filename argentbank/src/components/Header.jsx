@@ -10,25 +10,20 @@ import "../styles/components/Header.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
-// React/React-router components import
-import { NavLink } from 'react-router-dom';
-
 // React/React-router/Redux components import
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 
-// Store import
+// Store functions import
 import { disconnectUser } from "../store/store";
 
 /**
- * 
- * @returns JSX code for the App Header
+ * Header of the Argent Bank App
+ * @returns JSX code for the header
  */
 function Header(){
 
-
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const isLogged = useSelector((state) => state.userStore.isLoggedIn);
     const firstName = useSelector((state) => state.userStore.firstName);
 

@@ -3,6 +3,7 @@
 // Redux Toolkit import
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
+/* Creating a slice of the store. */
 const userStore = createSlice({
     name: 'user',
     initialState: {
@@ -44,6 +45,7 @@ export const {connectUser, disconnectUser, setUser, setUserEmail } = userStore.a
 // Enabling redux devtools for the redux browser extension
 const reduxDevtools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
+/* Creating a store with the reducer. */
 export const store = configureStore({
     reducer: {
         userStore: userStore.reducer,

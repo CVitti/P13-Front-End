@@ -7,7 +7,7 @@ import "../styles/pages/ErrorPage.css"
 import { NavLink } from 'react-router-dom';
 
 /**
- * 
+ * Error Page used in case of wrong route
  * @returns JSX Code for the Error Page
  */
 function ErrorPage() {

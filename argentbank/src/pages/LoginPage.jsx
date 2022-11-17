@@ -14,20 +14,27 @@ import { useDispatch, useSelector } from "react-redux";
 // API function import
 import { checkCredentials } from "../services/bankAPI";
 
-// Store import
+// Store functions import
 import { connectUser, setUserEmail } from "../store/store";
 
 /**
- * 
- * @returns JSX Code for the SignIn Page
+ * Login page of the Argent Bank App
+ * @returns JSX Code for the Login Page
  */
-function SignInPage(){
+function LoginPage(){
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    // Collect state data
     const email = useSelector((state) => state.userStore.userEmail);
-
+    
+    /**
+     * If the credentials are valid, the user is logged in and redirected to the profile page,
+     * otherwise an error message is displayed in the console. 
+     * If the checkbox is checked, user email is set in the storage to show it on the next login (without page refresh).
+     * @param {object} e Click event triggered on form submit
+     */
     async function handleFormSubmit(e) {
 
         // Submit cancel
@@ -38,7 +45,7 @@ function SignInPage(){
         let userPassword = document.getElementById('password').value;
         let rememberChecked = document.getElementById('remember-me').checked;
 
-        // API call to check if credentials are valid and decide to login user or not
+        // API call to check if credentials are valid and decide to login user or not, rembember email or not and then navigate on profile page if valid
         let response = await checkCredentials(userMail, userPassword);
         if (response.body) {    
             dispatch(connectUser(response.body)); 
@@ -79,4 +86,4 @@ function SignInPage(){
         </main>
     );
 }
-export default SignInPage;
+export default LoginPage;

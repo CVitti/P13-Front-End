@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 // API function import
 import { updateUserName, getUserProfile } from "../services/bankAPI";
 
-// Store import
+// Store functions import
 import { setUser } from "../store/store";
 
 /**
@@ -26,6 +26,7 @@ function UserPage() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     
+    // Collect state data
     const token = useSelector((state) => state.userStore.userToken);
     const firstName = useSelector((state) => state.userStore.firstName);
     const lastName = useSelector((state) => state.userStore.lastName);

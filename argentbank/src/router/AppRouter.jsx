@@ -16,16 +16,17 @@ import ErrorPage from '../pages/ErrorPage';
 import '../styles/pages/App.css';
 
 /**
- * 
+ * Router of the Argent Bank App
  * @returns Pages and components code according to the currently used route
  */
 function AppRouter() {
   return (
     <BrowserRouter>
       <React.Fragment>
+        {/* Header for every page */}
         <Header />
-        <Routes>
-          
+
+        <Routes>          
           {/* Home Page Route */}
           <Route path="/" element={<HomePage />}/>
 
@@ -37,7 +38,6 @@ function AppRouter() {
 
           {/* Error Route */}
           <Route path="*" element={<ErrorPage />}/>
-
         </Routes>
 
         {/* Footer for every page */}
