@@ -15,7 +15,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { checkCredentials } from "../services/bankAPI";
 
 // Store functions import
-import { connectUser, setUserEmail } from "../store/store";
+import { connectUser } from "../store/store";
+import { useEffect } from "react";
 
 /**
  * Login page of the Argent Bank App
@@ -26,8 +27,13 @@ function LoginPage(){
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    // Collect state data
-    const email = useSelector((state) => state.userStore.userEmail);
+    useEffect(()=> {
+        // On component loading, check if email needs to be assigned according to local storage values.
+        if(localStorage.checkbox){
+            document.getElementById('username').value = localStorage.getItem("userEmail");
+            document.getElementById('remember-me').checked = true;
+        }
+    }, [])    
     
     /**
      * If the credentials are valid, the user is logged in and redirected to the profile page,
@@ -41,16 +47,19 @@ function LoginPage(){
         e.preventDefault();
   
         // Get data from login fields
-        let userMail = document.getElementById('username').value;
-        let userPassword = document.getElementById('password').value;
+        let userEmail = document.getElementById('username').value;
+        let passwordInput = document.getElementById('password').value;
         let rememberChecked = document.getElementById('remember-me').checked;
-
+        
         // API call to check if credentials are valid and decide to login user or not, rembember email or not and then navigate on profile page if valid
-        let response = await checkCredentials(userMail, userPassword);
+        let response = await checkCredentials(userEmail, passwordInput);
         if (response.body) {    
             dispatch(connectUser(response.body)); 
             if (rememberChecked) {
-                dispatch(setUserEmail(userMail));
+                localStorage.setItem("userEmail", userEmail);
+                localStorage.setItem("checkbox", rememberChecked);
+            }else { 
+                localStorage.clear();
             }
             navigate("/profile"); 
         }else {
@@ -66,7 +75,7 @@ function LoginPage(){
                 <form onSubmit={handleFormSubmit}>
                     <div className="input-wrapper">
                         <label htmlFor="username">Username</label>
-                        <input type="text" id="username" defaultValue={email} />
+                        <input type="text" id="username" />
                     </div>
                     <div className="input-wrapper">
                         <label htmlFor="password">Password</label>

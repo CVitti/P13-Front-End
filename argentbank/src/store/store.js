@@ -10,15 +10,13 @@ const userStore = createSlice({
         isLoggedIn : false,
         userToken : null,
         firstName : "",
-        lastName : "",
-        userEmail : "",
+        lastName : ""
     },
    
     reducers: {
         connectUser: (state, data) => {
             state.isLoggedIn = true;
             state.userToken = "Bearer " + data.payload.token;
-            state.userEmail = "";
         },
 
         disconnectUser: (state) => {
@@ -32,15 +30,10 @@ const userStore = createSlice({
             state.firstName = data.payload.firstName;
             state.lastName = data.payload.lastName;
         },
-
-        setUserEmail: (state, data) => {
-            state.userEmail = data.payload;
-        },
-
     },
 }) 
 
-export const {connectUser, disconnectUser, setUser, setUserEmail } = userStore.actions;
+export const {connectUser, disconnectUser, setUser } = userStore.actions;
 
 // Enabling redux devtools for the redux browser extension
 const reduxDevtools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
